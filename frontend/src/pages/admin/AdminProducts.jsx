@@ -53,8 +53,8 @@ export default function AdminProducts() {
       <form className="admin-form" onSubmit={handleSubmit}>
         <h2>{editingId ? 'Editar produto' : 'Cadastrar produto'}</h2>
         <label><span>Nome</span><input value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} required /></label>
-        <label><span>Descricao</span><textarea value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} required /></label>
-        <label><span>Preco</span><input type="number" min="0" step="0.01" value={form.price} onChange={(event) => setForm({ ...form, price: event.target.value })} required /></label>
+        <label><span>Descrição</span><textarea value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} required /></label>
+        <label><span>Preço</span><input type="number" min="0" step="0.01" value={form.price} onChange={(event) => setForm({ ...form, price: event.target.value })} required /></label>
         <label>
           <span>Categoria</span>
           <select value={form.categoryId} onChange={(event) => setForm({ ...form, categoryId: event.target.value })} required>
@@ -76,7 +76,7 @@ export default function AdminProducts() {
         </div>
         <div className="responsive-table">
           <table>
-            <thead><tr><th>Produto</th><th>Categoria</th><th>Preco</th><th>Status</th><th>Acoes</th></tr></thead>
+            <thead><tr><th>Produto</th><th>Categoria</th><th>Preço</th><th>Status</th><th>Ações</th></tr></thead>
             <tbody>
               {filteredProducts.map((product) => (
                 <tr key={product.id}>

@@ -1,4 +1,4 @@
-import { Camera, Clock, MapPin, MessageCircle, Share2 } from 'lucide-react'
+import { Banknote, Camera, Clock, CreditCard, MapPin, MessageCircle, Share2, Truck } from 'lucide-react'
 import { businessConfig } from '../config/businessConfig'
 
 export default function Contact() {
@@ -6,7 +6,7 @@ export default function Contact() {
     <section className="page-section">
       <div className="container contact-grid">
         <div className="page-heading align-left">
-          <span className="eyebrow">Contato e localizacao</span>
+          <span className="eyebrow">Contato e localização</span>
           <h1>{businessConfig.name}</h1>
           <p>{businessConfig.tagline}</p>
           <div className="contact-list">
@@ -17,6 +17,10 @@ export default function Contact() {
             <p>
               <Clock size={18} />
               {businessConfig.hours}
+            </p>
+            <p>
+              <Truck size={18} />
+              Tempo medio delivery: {businessConfig.deliveryTime}
             </p>
           </div>
           <div className="hero-actions">
@@ -41,10 +45,42 @@ export default function Contact() {
         <div className="map-card">
           <iframe
             title="Mapa da Tenda do Ozi Gastrobar"
-            src="https://www.google.com/maps?q=Sao%20Paulo%20SP&output=embed"
+            src={businessConfig.googleMapsEmbedUrl}
             loading="lazy"
           />
         </div>
+      </div>
+
+      <div className="container contact-info-grid">
+        <section className="contact-panel">
+          <h2>
+            <Clock size={22} />
+            Horários de Funcionamento
+          </h2>
+          <div className="hours-list">
+            {businessConfig.openingHours.map((item) => (
+              <div className="hours-row" key={item.day}>
+                <span>{item.day}</span>
+                <strong>{item.time}</strong>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="contact-panel">
+          <h2>
+            <CreditCard size={22} />
+            Métodos de Pagamento
+          </h2>
+          <div className="payment-list">
+            {businessConfig.paymentMethods.map((method) => (
+              <span key={method}>
+                <Banknote size={16} />
+                {method}
+              </span>
+            ))}
+          </div>
+        </section>
       </div>
     </section>
   )

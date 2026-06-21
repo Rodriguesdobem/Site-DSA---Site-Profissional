@@ -23,7 +23,7 @@ export default function AdminOrders() {
                 <th>Itens</th>
                 <th>Total</th>
                 <th>Tipo</th>
-                <th>Observacao</th>
+                <th>Observação</th>
                 <th>Status</th>
               </tr>
             </thead>

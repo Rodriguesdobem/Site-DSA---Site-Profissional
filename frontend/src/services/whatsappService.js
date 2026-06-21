@@ -28,7 +28,7 @@ export function buildOrderMessage(items, customer) {
     '',
     `Nome: ${customer.name || 'preencher com o cliente'}`,
     `Forma de retirada/entrega: ${deliveryInfo}`,
-    `Observacao: ${customer.note || 'sem observacao'}`,
+    `Observação: ${customer.note || 'sem observação'}`,
   ].join('\n')
 }
 

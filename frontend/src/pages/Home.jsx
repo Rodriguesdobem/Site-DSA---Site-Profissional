@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Clock, Flame, MessageCircle, ShoppingBasket } from 'lucide-react'
+import { ArrowRight, Flame, MessageCircle, ShoppingBasket } from 'lucide-react'
 import { businessConfig } from '../config/businessConfig'
 import { formatCurrency } from '../services/whatsappService'
 
@@ -35,11 +35,11 @@ export default function Home() {
             <p>{businessConfig.tagline}</p>
             <div className="hero-actions">
               <Link className="btn btn-primary" to="/cardapio">
-                Ver Cardapio
+                Ver Cardápio
                 <ArrowRight size={18} />
               </Link>
               <Link className="btn btn-secondary" to="/promocoes">
-                Ver Promocoes
+                Ver Promoções
               </Link>
               <a className="btn btn-whatsapp" href={`https://wa.me/${businessConfig.whatsappNumber}`} target="_blank" rel="noreferrer">
                 <MessageCircle size={18} />
@@ -60,7 +60,7 @@ export default function Home() {
         <div className="container section-heading">
           <span className="eyebrow">
             <ShoppingBasket size={16} />
-            Cardapio digital
+            Cardápio digital
           </span>
           <h2>Escolha, adicione ao carrinho e finalize pelo WhatsApp.</h2>
         </div>
@@ -80,14 +80,9 @@ export default function Home() {
       <section className="section muted-section">
         <div className="container info-band">
           <div>
-            <span className="eyebrow">
-              <Clock size={16} />
-              Funcionamento
-            </span>
             <h2>Pronto para apresentar e evoluir.</h2>
             <p>
-              A estrutura usa dados mock e localStorage, deixando o caminho preparado para API,
-              pagamento online e banco de dados nas proximas etapas.
+              Faça seu pedido imediatamente e aproveite os melhores espetos e petiscos da região.
             </p>
           </div>
           <Link className="btn btn-primary" to="/cardapio">

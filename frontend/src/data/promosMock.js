@@ -19,7 +19,7 @@ export const promosMock = [
   },
   {
     id: 'promocao-semana',
-    title: 'Promocao da Semana',
+    title: 'Promoção da Semana',
     description: '2 espetos tradicionais + 1 Coca-Cola lata.',
     productId: 'coca-lata',
     price: 19.9,

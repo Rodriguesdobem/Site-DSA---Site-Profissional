@@ -8,7 +8,7 @@ export default function AdminDashboard() {
   const cards = [
     { label: 'Produtos', value: products.length, icon: Utensils },
     { label: 'Categorias', value: categories.length, icon: Tags },
-    { label: 'Promocoes', value: promos.length, icon: Percent },
+    { label: 'Promoções', value: promos.length, icon: Percent },
     { label: 'Pedidos', value: orders.length, icon: ClipboardList },
     { label: 'Vendido estimado', value: formatCurrency(estimatedSales), icon: DollarSign },
   ]

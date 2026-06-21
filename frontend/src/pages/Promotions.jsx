@@ -9,8 +9,8 @@ export default function Promotions() {
     <section className="page-section">
       <div className="container page-heading">
         <span className="eyebrow">Combos e ofertas</span>
-        <h1>Promocoes da Tenda</h1>
-        <p>Promocoes simuladas com base nos itens reais do cardapio.</p>
+        <h1>Promoções da Tenda</h1>
+        <p>Promoções simuladas com base nos itens reais do cardápio.</p>
       </div>
 
       <div className="container promo-grid">

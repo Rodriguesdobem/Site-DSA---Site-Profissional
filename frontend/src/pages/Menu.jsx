@@ -21,7 +21,7 @@ export default function Menu() {
   return (
     <section className="page-section">
       <div className="container page-heading">
-        <span className="eyebrow">Cardapio real</span>
+        <span className="eyebrow">Cardápio real</span>
         <h1>Monte seu pedido</h1>
         <p>Use a busca ou filtre por categoria para encontrar espetos, petiscos e bebidas.</p>
       </div>

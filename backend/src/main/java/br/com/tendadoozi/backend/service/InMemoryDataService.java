@@ -35,9 +35,9 @@ public class InMemoryDataService {
             "Espetos, petiscos e bebidas para curtir bons momentos.",
             15.0,
             "5511999999999",
-            "Rua dos Espetos, 123 - Centro, Sao Paulo - SP",
-            "Terca a domingo, das 18h as 23h30",
-            "https://www.google.com/maps/search/?api=1&query=Tenda%20do%20Ozi%20Gastrobar",
+            "Av. Pres. Vargas, 833 - Jardim Nova Itapevi, Itapevi - SP, 06694-000, Brasil",
+            "Quarta a sabado, das 18:30 as 23:00",
+            "https://www.google.com/maps/search/?api=1&query=Av.%20Pres.%20Vargas%20833%20Jardim%20Nova%20Itapevi%20Itapevi%20SP%2006694-000%20Brasil",
             "https://www.instagram.com/",
             "https://www.facebook.com/",
             "Pagamento online sera integrado em uma proxima versao."

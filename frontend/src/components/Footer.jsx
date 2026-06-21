@@ -11,9 +11,9 @@ export default function Footer() {
           <p>{businessConfig.tagline}</p>
         </div>
         <div>
-          <h3>Navegacao</h3>
-          <Link to="/cardapio">Cardapio</Link>
-          <Link to="/promocoes">Promocoes</Link>
+          <h3>Navegação</h3>
+          <Link to="/cardapio">Cardápio</Link>
+          <Link to="/promocoes">Promoções</Link>
           <Link to="/contato">Contato</Link>
         </div>
         <div>

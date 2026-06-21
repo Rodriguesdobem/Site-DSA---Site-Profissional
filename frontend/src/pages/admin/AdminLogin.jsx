@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { LockKeyhole } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+import { ArrowLeft, LockKeyhole } from 'lucide-react'
 import { apiService } from '../../services/apiService'
 
 export default function AdminLogin() {
@@ -26,7 +26,7 @@ export default function AdminLogin() {
           <LockKeyhole size={28} />
         </div>
         <h1>Login Admin</h1>
-        <p>Acesso simulado para apresentacao do TCC.</p>
+        <p>Acesso simulado para apresentação do TCC.</p>
         {error && <div className="form-error" role="alert">{error}</div>}
         <label>
           <span>Usuario</span>
@@ -50,6 +50,10 @@ export default function AdminLogin() {
         <button className="btn btn-primary full" type="submit">
           Entrar
         </button>
+        <Link className="btn btn-secondary full" to="/">
+          <ArrowLeft size={18} />
+          Voltar para página de clientes
+        </Link>
       </form>
     </section>
   )

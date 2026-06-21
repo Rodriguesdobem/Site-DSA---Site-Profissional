@@ -6,7 +6,7 @@ const adminLinks = [
   { to: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { to: '/admin/produtos', label: 'Produtos', icon: Utensils },
   { to: '/admin/categorias', label: 'Categorias', icon: Tags },
-  { to: '/admin/promocoes', label: 'Promocoes', icon: Percent },
+  { to: '/admin/promocoes', label: 'Promoções', icon: Percent },
   { to: '/admin/pedidos', label: 'Pedidos', icon: ClipboardList },
 ]
 
@@ -22,7 +22,7 @@ export default function AdminSidebar() {
     <aside className="admin-sidebar">
       <div className="admin-logo">
         <Boxes size={22} />
-        <span>Admin Ozi</span>
+        <span>Tenda do Ozi Gastrobar - Admin</span>
       </div>
       <nav aria-label="Menu administrativo">
         {adminLinks.map((link) => {

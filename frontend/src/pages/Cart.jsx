@@ -30,8 +30,8 @@ export default function Cart() {
       total: cartTotal,
       type: customer.fulfillment,
       note: customer.fulfillment === 'entrega'
-        ? `${customer.note || 'Sem observacao'} | Endereco: ${customer.address || 'nao informado'}`
-        : customer.note || 'Sem observacao',
+        ? `${customer.note || 'Sem observação'} | Endereço: ${customer.address || 'Não informado'}`
+        : customer.note || 'Sem observação',
       status: 'Recebido',
     })
     window.open(getWhatsappUrl(cart, customer), '_blank', 'noopener,noreferrer')
@@ -50,9 +50,9 @@ export default function Cart() {
           {cart.length === 0 ? (
             <div className="empty-state">
               <h2>Seu carrinho esta vazio</h2>
-              <p>Adicione produtos do cardapio para montar seu pedido.</p>
+              <p>Adicione produtos do cardápio para montar seu pedido.</p>
               <Link className="btn btn-primary" to="/cardapio">
-                Ver cardapio
+                Ver cardápio
               </Link>
             </div>
           ) : (
@@ -68,7 +68,7 @@ export default function Cart() {
         </div>
 
         <aside className="checkout-panel">
-          <h2>Finalizacao</h2>
+          <h2>Finalização</h2>
           {!canFinish && cart.length > 0 && (
             <div className="alert">
               <AlertCircle size={18} />
@@ -81,7 +81,7 @@ export default function Cart() {
             <input name="name" value={customer.name} onChange={handleChange} placeholder="Seu nome" />
           </label>
           <label>
-            <span>Observacao do pedido</span>
+            <span>Observação do pedido</span>
             <textarea name="note" value={customer.note} onChange={handleChange} placeholder="Ex: sem cebola, ponto da carne..." />
           </label>
           <label>
@@ -93,7 +93,7 @@ export default function Cart() {
           </label>
           {customer.fulfillment === 'entrega' && (
             <label>
-              <span>Endereco</span>
+              <span>Endereço</span>
               <input name="address" value={customer.address} onChange={handleChange} placeholder="Rua, numero, bairro" />
             </label>
           )}

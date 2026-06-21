@@ -25,21 +25,21 @@ export default function AdminPromotions() {
 
   return (
     <section className="admin-page admin-crud-grid">
-      <div className="admin-heading"><span className="eyebrow">CRUD</span><h1>Promocoes</h1></div>
+      <div className="admin-heading"><span className="eyebrow"></span><h1>Promoções</h1></div>
       <form className="admin-form" onSubmit={handleSubmit}>
-        <h2>{editingId ? 'Editar promocao' : 'Cadastrar promocao'}</h2>
+        <h2>{editingId ? 'Editar Promoção' : 'Cadastrar Promoção'}</h2>
         <label><span>Titulo</span><input value={form.title} onChange={(event) => setForm({ ...form, title: event.target.value })} required /></label>
-        <label><span>Descricao</span><textarea value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} required /></label>
+        <label><span>Descrição</span><textarea value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} required /></label>
         <label><span>Produto relacionado</span><select value={form.productId} onChange={(event) => setForm({ ...form, productId: event.target.value })} required><option value="">Selecione</option>{products.map((product) => <option key={product.id} value={product.id}>{product.name}</option>)}</select></label>
-        <label><span>Preco promocional</span><input type="number" min="0" step="0.01" value={form.price} onChange={(event) => setForm({ ...form, price: event.target.value })} required /></label>
+        <label><span>Preço promocional</span><input type="number" min="0" step="0.01" value={form.price} onChange={(event) => setForm({ ...form, price: event.target.value })} required /></label>
         <label><span>Imagem</span><input value={form.image} onChange={(event) => setForm({ ...form, image: event.target.value })} placeholder="URL da imagem" /></label>
         <label><span>Status</span><select value={form.status} onChange={(event) => setForm({ ...form, status: event.target.value })}><option value="ativo">Ativo</option><option value="inativo">Inativo</option></select></label>
-        <button className="btn btn-primary full" type="submit"><Plus size={18} /> Salvar promocao</button>
+        <button className="btn btn-primary full" type="submit"><Plus size={18} /> Salvar promoção</button>
       </form>
       <div className="admin-table-card">
         <div className="responsive-table">
           <table>
-            <thead><tr><th>Titulo</th><th>Preco</th><th>Status</th><th>Acoes</th></tr></thead>
+            <thead><tr><th>Título</th><th>Preço</th><th>Status</th><th>Ações</th></tr></thead>
             <tbody>
               {promos.map((promo) => (
                 <tr key={promo.id}>

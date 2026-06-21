@@ -26,14 +26,14 @@ export default function AdminCategories() {
       <form className="admin-form" onSubmit={handleSubmit}>
         <h2>{editingId ? 'Editar categoria' : 'Cadastrar categoria'}</h2>
         <label><span>Nome</span><input value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} required /></label>
-        <label><span>Descricao</span><textarea value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} required /></label>
+        <label><span>Descrição</span><textarea value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} required /></label>
         <label><span>Status</span><select value={form.status} onChange={(event) => setForm({ ...form, status: event.target.value })}><option value="ativo">Ativo</option><option value="inativo">Inativo</option></select></label>
         <button className="btn btn-primary full" type="submit"><Plus size={18} /> Salvar categoria</button>
       </form>
       <div className="admin-table-card">
         <div className="responsive-table">
           <table>
-            <thead><tr><th>Nome</th><th>Descricao</th><th>Status</th><th>Acoes</th></tr></thead>
+            <thead><tr><th>Nome</th><th>Descrição</th><th>Status</th><th>Ações</th></tr></thead>
             <tbody>
               {categories.map((category) => (
                 <tr key={category.id}>

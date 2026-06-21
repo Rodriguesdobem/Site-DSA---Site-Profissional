@@ -1,4 +1,5 @@
-import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom'
 import AdminSidebar from '../components/AdminSidebar'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -16,10 +17,17 @@ import AdminProducts from '../pages/admin/AdminProducts'
 import AdminPromotions from '../pages/admin/AdminPromotions'
 
 function CustomerLayout() {
+  const location = useLocation()
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
+  }, [location.pathname])
+
   return (
     <>
       <Header />
-      <main>
+      <main className="page-transition" key={location.pathname}>
         <Outlet />
       </main>
       <Footer />
@@ -28,10 +36,12 @@ function CustomerLayout() {
 }
 
 function AdminLayout() {
+  const location = useLocation()
+
   return (
     <div className="admin-shell">
       <AdminSidebar />
-      <main className="admin-main">
+      <main className="admin-main page-transition" key={location.pathname}>
         <Outlet />
       </main>
     </div>
