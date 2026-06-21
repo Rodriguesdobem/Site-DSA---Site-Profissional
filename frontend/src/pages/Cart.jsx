@@ -7,7 +7,7 @@ import { useApp } from '../context/useApp'
 import { formatCurrency, getWhatsappUrl } from '../services/whatsappService'
 
 export default function Cart() {
-  const { cart, cartTotal, updateQuantity, removeFromCart, clearCart } = useApp()
+  const { cart, cartTotal, updateQuantity, removeFromCart, clearCart, createOrder } = useApp()
   const [customer, setCustomer] = useState({
     name: '',
     note: '',
@@ -22,8 +22,18 @@ export default function Cart() {
     setCustomer((current) => ({ ...current, [name]: value }))
   }
 
-  const finishOrder = () => {
+  const finishOrder = async () => {
     if (!canFinish) return
+    await createOrder({
+      customerName: customer.name || 'Cliente WhatsApp',
+      items: cart.map((item) => `${item.quantity}x ${item.name}`).join(', '),
+      total: cartTotal,
+      type: customer.fulfillment,
+      note: customer.fulfillment === 'entrega'
+        ? `${customer.note || 'Sem observacao'} | Endereco: ${customer.address || 'nao informado'}`
+        : customer.note || 'Sem observacao',
+      status: 'Recebido',
+    })
     window.open(getWhatsappUrl(cart, customer), '_blank', 'noopener,noreferrer')
   }
 

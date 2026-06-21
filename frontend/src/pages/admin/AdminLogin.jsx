@@ -1,20 +1,22 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LockKeyhole } from 'lucide-react'
+import { apiService } from '../../services/apiService'
 
 export default function AdminLogin() {
   const navigate = useNavigate()
   const [form, setForm] = useState({ username: '', password: '' })
   const [error, setError] = useState('')
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    if (form.username === 'admin' && form.password === 'admin123') {
+    try {
+      await apiService.login(form)
       localStorage.setItem('tenda-admin-auth', 'true')
       navigate('/admin/dashboard')
-      return
+    } catch (apiError) {
+      setError(apiError.message || 'Usuario ou senha invalidos. Use admin / admin123.')
     }
-    setError('Usuario ou senha invalidos. Use admin / admin123.')
   }
 
   return (
